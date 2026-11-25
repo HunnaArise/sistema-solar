@@ -1,0 +1,468 @@
+/* As quatro páginas compartilham este arquivo de estilos. */
+/* O site define suas próprias cores, sem o escurecimento automático do navegador. */
+:root {
+  color-scheme: only light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f1f1;
+  color: #242424;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(92%, 960px);
+  margin: 0 auto;
+}
+
+a {
+  color: #3b3b3b;
+}
+
+header, article {
+  background: white;
+  border: 1px solid #dcdcdc;
+}
+
+.barra, nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.barra {
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.marca {
+  color: #242424;
+  font-weight: bold;
+}
+
+nav a, .botao {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #3b3b3b;
+}
+
+nav a[aria-current="page"], .botao {
+  background: #3b3b3b;
+  color: white;
+  text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  background: #444444;
+  color: #ffffff;
+}
+
+main {
+  flex: 1;
+  padding: 32px 0 48px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 32px 0 12px;
+}
+
+h3, article p {
+  margin: 0;
+}
+
+.capa {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(20px, 5vw, 48px);
+  border-radius: 20px;
+  background: linear-gradient(125deg, #f0f0f0, #dedede);
+}
+
+/* O círculo tracejado e o ponto representam uma órbita. */
+.orbita {
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: min(100%, 240px);
+  aspect-ratio: 1;
+  border: 2px dashed #767676;
+  border-radius: 50%;
+}
+
+.orbita::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: 9%;
+  width: 22px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #484848;
+}
+
+/* O gradiente desenha o Sol usando apenas CSS. */
+.sol {
+  width: 62%;
+  aspect-ratio: 1;
+  justify-self: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff5aa, #ffc255 55%, #ee812a);
+  box-shadow: 0 0 36px #ffc255a0;
+}
+
+/* A grade divide os cartões em duas colunas no computador. */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+article {
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* A foto e o texto ocupam a mesma área do cartão. */
+.planeta {
+  position: relative;
+  overflow: hidden;
+  align-self: start;
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 24px;
+}
+
+.planeta summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.planeta summary::-webkit-details-marker {
+  display: none;
+}
+
+.planeta summary:focus-visible {
+  outline: 3px solid #545454;
+  outline-offset: -3px;
+}
+
+.nome-planeta {
+  display: block;
+  padding: 12px 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.planeta img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  padding: 16px;
+  object-fit: contain;
+  background: #000;
+}
+
+/* A camada translúcida cobre a foto e deixa o nome visível abaixo. */
+.planeta .descricao {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 250px;
+  overflow-y: auto;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  padding: 16px;
+  background: rgb(255 255 255 / 88%);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.descricao p {
+  margin: 0;
+}
+
+.descricao p + p {
+  margin-top: 8px;
+}
+
+.introducao-planetas {
+  max-width: 55ch;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.dica-planetas {
+  width: fit-content;
+  margin-top: 0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.creditos {
+  margin: 24px 0 0;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 900px) {
+  .catalogo .grade {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  background: #e6e6e6;
+}
+
+/* Em telas estreitas, os blocos ficam um abaixo do outro. */
+@media (max-width: 600px) {
+  .capa, .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .orbita {
+    width: 150px;
+  }
+}
+
+/* Os controles do simulador usam a mesma grade responsiva dos cartões. */
+.simulador {
+  padding: clamp(16px, 4vw, 28px);
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 24px;
+}
+
+.simulador label {
+  display: block;
+  font-weight: bold;
+}
+
+.simulador input, .simulador select {
+  width: 100%;
+  margin: 4px 0 8px;
+  padding: 10px 12px;
+  border: 1px solid #858585;
+  border-radius: 8px;
+  background: white;
+  color: inherit;
+  font: inherit;
+}
+
+.simulador select {
+  max-width: 18rem;
+  margin-bottom: 16px;
+}
+
+.simulador .botao {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* A fileira quebra em linhas menores conforme a largura disponível. */
+.fileira-planetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fileira-planetas a {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 10px 4px;
+  border: 1px solid #dcdcdc;
+  border-radius: 16px;
+  background: #e0e0e0;
+}
+
+.fileira-planetas img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: black;
+}
+
+.planeta:target {
+  outline: 2px solid #545454;
+  outline-offset: 3px;
+}
+
+
+.acoes-capa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botao-secundario {
+  background: white;
+  color: #3b3b3b;
+  border: 1px solid #767676;
+}
+
+.resultados article {
+  background: #f3f3f3;
+  border-radius: 16px;
+  overflow-wrap: anywhere;
+}
+
+.valor-resultado {
+  display: block;
+  margin: 4px 0;
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.mudar-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 7px 12px;
+  border: 1px solid #858585;
+  border-radius: 20px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.bolinha-tema {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* A aba Sobre mantém os cartões empilhados em qualquer largura. */
+.sobre-grade {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.titulo-sobre {
+  margin-bottom: 16px;
+}
+
+.cartao-sobre {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid #dcdcdc;
+  border-radius: 24px;
+  background: white;
+}
+
+.cartao-sobre h2 {
+  margin: 0 0 16px;
+}
+
+.equipe-sobre h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.integrantes {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.integrantes li {
+  padding-left: 12px;
+  border-left: 3px solid #858585;
+  font-weight: bold;
+}
+
+/* A classe altera a paleta quando o tema escuro está ligado. */
+.tema-escuro {
+  color-scheme: dark;
+  background: #161616;
+  color: #f2f2f2;
+}
+
+.tema-escuro header, .tema-escuro article, .tema-escuro .planeta,
+.tema-escuro .simulador, .tema-escuro .cartao-sobre {
+  background: #242424;
+  border-color: #505050;
+}
+
+.tema-escuro a {
+  color: #f2f2f2;
+}
+
+.tema-escuro nav a[aria-current="page"], .tema-escuro .botao {
+  background: #e3e3e3;
+  color: #222;
+}
+
+.tema-escuro .capa, .tema-escuro footer {
+  background: #292929;
+}
+
+.tema-escuro .orbita::after {
+  background: #bdbdbd;
+}
+
+.tema-escuro .dica-planetas, .tema-escuro .fileira-planetas a,
+.tema-escuro .resultados article, .tema-escuro .simulador input,
+.tema-escuro .simulador select, .tema-escuro .botao-secundario {
+  background: #353535;
+  color: #f2f2f2;
+  border-color: #666;
+}
+
+.tema-escuro .planeta .descricao {
+  background: rgb(24 24 24 / 88%);
+}
+
+.tema-escuro .planeta summary:focus-visible, .tema-escuro .planeta:target {
+  outline-color: #ccc;
+}
+
+/* O scale aumenta a caixa visualmente sem mudar o espaço que ela ocupa. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  article, .capa, .planeta, .fileira-planetas a, .botao, nav a {
+    transition: transform 180ms ease;
+  }
+
+  article:hover, .capa:hover, .planeta:hover, .fileira-planetas a:hover,
+  .botao:hover, nav a:hover {
+    transform: scale(1.025);
+  }
+}

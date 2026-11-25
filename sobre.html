@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre o site | Sistema Solar</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container barra">
+      <!-- Os links abrem as páginas e aria-current identifica a página atual. -->
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Sistema Solar</a>
+        <a href="planetas.html">Planetas</a>
+        <a href="simulador.html">Simulador</a>
+        <a href="sobre.html" aria-current="page">Sobre o site</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="mudar-tema" id="mudar-tema" type="button" aria-pressed="false">
+        <span class="bolinha-tema" aria-hidden="true"></span>
+        Mude o tema
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="titulo-sobre">Sobre o site</h1>
+    <div class="grade sobre-grade">
+      <section class="cartao-sobre">
+        <h2>Como fizemos o site</h2>
+        <p>Fizemos este site com o que aprendemos de HTML, CSS e JavaScript e com a ajuda do ChatGPT.</p>
+        <p>Usamos o Visual Studio Code (VS Code) para escrever e editar o código.</p>
+        <p>Para conferir como o site fica em telas de celular, você pode usar o modo de simulação do Chrome DevTools.</p>
+        <a class="botao" href="https://developer.chrome.com/docs/devtools/device-mode/">Ver guia do Chrome DevTools</a>
+      </section>
+      <section class="cartao-sobre equipe-sobre">
+        <h2>Integrantes</h2>
+        <ul class="integrantes">
+          <li>Beatriz de Souza Rodrigues</li>
+          <li>Samuel Pimentel Nascimento Oliveira</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>Sistema Solar · Explorando os planetas</footer>
+</body>
+</html>

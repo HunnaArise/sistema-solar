@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início | Sistema Solar</title>
+  <!-- O link carrega o CSS externo. Todas as páginas usam o mesmo script.js. -->
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container barra">
+      <!-- Os links abrem as páginas e aria-current identifica a página atual. -->
+      <nav aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Sistema Solar</a>
+        <a href="planetas.html">Planetas</a>
+        <a href="simulador.html">Simulador</a>
+        <a href="sobre.html">Sobre o site</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="mudar-tema" id="mudar-tema" type="button" aria-pressed="false">
+        <span class="bolinha-tema" aria-hidden="true"></span>
+        Mude o tema
+      </button>
+    </div>
+  </header>
+
+  <!-- O elemento main reúne o conteúdo principal de cada página. -->
+  <main class="container">
+    <section class="capa">
+      <div>
+        <h1>Conheça o Sistema Solar</h1>
+        <p>O Sistema Solar é formado pelo Sol e pelos corpos que orbitam ao seu redor, como planetas, planetas anões, asteroides e cometas.</p>
+        <div class="acoes-capa">
+          <a class="botao" href="planetas.html">Conhecer os planetas</a>
+          <a class="botao botao-secundario" href="simulador.html">Testar o simulador</a>
+        </div>
+      </div>
+      <div class="orbita" aria-hidden="true"><div class="sol"></div></div>
+    </section>
+
+    <section>
+      <h2>O que mantém tudo em órbita?</h2>
+      <div class="grade">
+        <article><h3>O Sol</h3><p>É a estrela do Sistema Solar. Sua luz e seu calor chegam à Terra.</p></article>
+        <article><h3>A gravidade</h3><p>A gravidade do Sol atrai os planetas e faz com que eles sigam trajetórias ao seu redor. Essas trajetórias são chamadas de órbitas.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Planetas do nosso Sistema Solar</h2>
+      <!-- Cada link aponta para o id do cartão correspondente na aba Planetas. -->
+      <ul class="fileira-planetas">
+        <li><a href="planetas.html#mercurio"><img src="https://science.nasa.gov/wp-content/uploads/2023/11/mercury-messenger-globe-pia15162.jpg" alt="">Mercúrio</a></li>
+        <li><a href="planetas.html#venus"><img src="https://science.nasa.gov/wp-content/uploads/2024/03/venus-mariner-10-pia23791-fig2.jpg" alt="">Vênus</a></li>
+        <li><a href="planetas.html#terra"><img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001016/GSFC_20171208_Archive_e001016~large.jpg" alt="">Terra</a></li>
+        <li><a href="planetas.html#marte"><img src="https://science.nasa.gov/wp-content/uploads/2023/04/hs-2016-15-a-full_tif-jpg.webp" alt="">Marte</a></li>
+        <li><a href="planetas.html#jupiter"><img src="https://assets.science.nasa.gov/content/dam/science/psd/solar/internal_resources/4204/Jupiter_against_black_background_of_space.jpeg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" alt="">Júpiter</a></li>
+        <li><a href="planetas.html#saturno"><img src="https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg" alt="">Saturno</a></li>
+        <li><a href="planetas.html#urano"><img src="https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg" alt="">Urano</a></li>
+        <li><a href="planetas.html#netuno"><img src="https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/p/i/a/0/PIA01492-1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" alt="">Netuno</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Sistema Solar · Explorando os planetas</footer>
+</body>
+</html>

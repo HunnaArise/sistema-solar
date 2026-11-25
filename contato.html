@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Sistema Solar</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container barra">
+      <!-- Os links abrem as páginas e aria-current identifica a página atual. -->
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Sistema Solar</a>
+        <a href="planetas.html">Planetas</a>
+        <a href="simulador.html">Simulador</a>
+        <a href="sobre.html">Sobre o site</a>
+        <a href="contato.html" aria-current="page">Contato</a>
+      </nav>
+      <button class="mudar-tema" id="mudar-tema" type="button" aria-pressed="false">
+        <span class="bolinha-tema" aria-hidden="true"></span>
+        Mude o tema
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="titulo-sobre">Contato</h1>
+    <section class="cartao-sobre">
+      <h2>Fale com a equipe</h2>
+      <!-- Os links abrem o aplicativo de telefone ou de e-mail do dispositivo. -->
+      <p><strong>Telefone</strong><br><a href="tel:+5517988137345">+55 (17) 98813-7345</a></p>
+      <p><strong>E-mail</strong><br><a href="mailto:samueloliveira.etec.2026@gmail.com">samueloliveira.etec.2026@gmail.com</a></p>
+      <p><strong>Localização</strong><br>Brasil | Barretos</p>
+    </section>
+  </main>
+
+  <footer>Sistema Solar · Explorando os planetas</footer>
+</body>
+</html>

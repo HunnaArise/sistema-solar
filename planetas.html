@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planetas | Sistema Solar</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container barra">
+      <!-- Os links abrem as páginas e aria-current identifica a página atual. -->
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Sistema Solar</a>
+        <a href="planetas.html" aria-current="page">Planetas</a>
+        <a href="simulador.html">Simulador</a>
+        <a href="sobre.html">Sobre o site</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="mudar-tema" id="mudar-tema" type="button" aria-pressed="false">
+        <span class="bolinha-tema" aria-hidden="true"></span>
+        Mude o tema
+      </button>
+    </div>
+  </header>
+
+  <!-- O elemento main reúne o conteúdo principal de cada página. -->
+  <main class="container catalogo">
+    <h1>Os oito planetas</h1>
+    <p class="introducao-planetas">De Mercúrio a Netuno, explore os oito planetas em ordem de distância do Sol.</p>
+    <p class="dica-planetas">Passe o mouse sobre uma foto ou toque nela para descobrir curiosidades sobre o planeta.</p>
+
+    <section>
+      <!-- O summary permite abrir os detalhes com toque, clique ou teclado. -->
+      <h2>Planetas rochosos</h2>
+      <div class="grade">
+        <details class="planeta" id="mercurio">
+          <summary>
+            <img src="https://science.nasa.gov/wp-content/uploads/2023/11/mercury-messenger-globe-pia15162.jpg" alt="Imagem de Mercúrio" loading="lazy">
+            <span class="nome-planeta">Mercúrio</span>
+          </summary>
+          <div class="descricao">
+            <p>É o menor planeta e o mais próximo do Sol.</p>
+            <p>Um ano em Mercúrio dura cerca de 88 dias terrestres. Sua superfície tem muitas crateras, parecidas com as da Lua.</p>
+          </div>
+        </details>
+        <details class="planeta" id="venus">
+          <summary>
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/venus-mariner-10-pia23791-fig2.jpg" alt="Imagem de Vênus" loading="lazy">
+            <span class="nome-planeta">Vênus</span>
+          </summary>
+          <div class="descricao">
+            <p>É o planeta mais quente, pois sua atmosfera retém muito calor.</p>
+            <p>Vênus leva cerca de 225 dias terrestres para dar uma volta ao redor do Sol. Ele gira em sentido contrário ao da maioria dos planetas.</p>
+          </div>
+        </details>
+        <details class="planeta" id="terra">
+          <summary>
+            <img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001016/GSFC_20171208_Archive_e001016~large.jpg" alt="Imagem de Terra" loading="lazy">
+            <span class="nome-planeta">Terra</span>
+          </summary>
+          <div class="descricao">
+            <p>É o planeta onde vivemos e tem água líquida na superfície.</p>
+            <p>Cerca de 71% da superfície da Terra é coberta por água. Seu único satélite natural é a Lua.</p>
+          </div>
+        </details>
+        <details class="planeta" id="marte">
+          <summary>
+            <img src="https://science.nasa.gov/wp-content/uploads/2023/04/hs-2016-15-a-full_tif-jpg.webp" alt="Imagem de Marte" loading="lazy">
+            <span class="nome-planeta">Marte</span>
+          </summary>
+          <div class="descricao">
+            <p>Tem solo rico em óxidos de ferro, que dão ao planeta sua aparência avermelhada.</p>
+            <p>Um ano em Marte dura cerca de 687 dias terrestres. O planeta tem duas luas pequenas, Fobos e Deimos, e abriga o enorme vulcão Monte Olimpo.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section>
+      <h2>Planetas gigantes</h2>
+      <div class="grade">
+        <details class="planeta" id="jupiter">
+          <summary>
+            <img src="https://assets.science.nasa.gov/content/dam/science/psd/solar/internal_resources/4204/Jupiter_against_black_background_of_space.jpeg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" alt="Imagem de Júpiter" loading="lazy">
+            <span class="nome-planeta">Júpiter</span>
+          </summary>
+          <div class="descricao">
+            <p>É o maior planeta do Sistema Solar.</p>
+            <p>Júpiter leva cerca de 12 anos terrestres para completar uma órbita. Sua Grande Mancha Vermelha é uma tempestade gigante.</p>
+          </div>
+        </details>
+        <details class="planeta" id="saturno">
+          <summary>
+            <img src="https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg" alt="Imagem de Saturno" loading="lazy">
+            <span class="nome-planeta">Saturno</span>
+          </summary>
+          <div class="descricao">
+            <p>Seus anéis são formados principalmente por partículas de gelo.</p>
+            <p>Saturno leva cerca de 29 anos terrestres para completar uma órbita. É um gigante gasoso formado principalmente por hidrogênio e hélio.</p>
+          </div>
+        </details>
+        <details class="planeta" id="urano">
+          <summary>
+            <img src="https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg" alt="Imagem de Urano" loading="lazy">
+            <span class="nome-planeta">Urano</span>
+          </summary>
+          <div class="descricao">
+            <p>Gira com o eixo muito inclinado, como se estivesse deitado de lado.</p>
+            <p>Urano leva cerca de 84 anos terrestres para dar uma volta ao redor do Sol. O metano na atmosfera contribui para sua cor azul-esverdeada.</p>
+          </div>
+        </details>
+        <details class="planeta" id="netuno">
+          <summary>
+            <img src="https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/p/i/a/0/PIA01492-1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" alt="Imagem de Netuno" loading="lazy">
+            <span class="nome-planeta">Netuno</span>
+          </summary>
+          <div class="descricao">
+            <p>É o planeta mais distante do Sol e tem ventos muito fortes.</p>
+            <p>Netuno leva cerca de 165 anos terrestres para completar uma órbita. Assim como Urano, é classificado como um gigante de gelo.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <p class='creditos'>Imagens e créditos das missões: <a href='https://science.nasa.gov/solar-system/planets/'>NASA Science</a>.</p>
+  </main>
+
+  <footer>Sistema Solar · Explorando os planetas</footer>
+</body>
+</html>

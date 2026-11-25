@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador | Sistema Solar</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container barra">
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Sistema Solar</a>
+        <a href="planetas.html">Planetas</a>
+        <a href="simulador.html" aria-current="page">Simulador</a>
+        <a href="sobre.html">Sobre o site</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="mudar-tema" id="mudar-tema" type="button" aria-pressed="false">
+        <span class="bolinha-tema" aria-hidden="true"></span>
+        Mude o tema
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Simulador planetário</h1>
+    <p>Escolha um planeta e preencha um ou os dois valores para calcular.</p>
+
+    <!-- O formulário reúne as entradas usadas pelo JavaScript. -->
+    <form class="simulador" id="simulador">
+      <label for="planeta">Planeta</label>
+      <select id="planeta">
+        <option value="mercurio">Mercúrio</option>
+        <option value="venus">Vênus</option>
+        <option value="terra">Terra</option>
+        <option value="marte" selected>Marte</option>
+        <option value="jupiter">Júpiter</option>
+        <option value="saturno">Saturno</option>
+        <option value="urano">Urano</option>
+        <option value="netuno">Netuno</option>
+      </select>
+
+      <div class="grade">
+        <div>
+          <label for="balanca">Quanto a balança marca na Terra (kg)?</label>
+          <input id="balanca" type="number" inputmode="decimal" min="0" step="any" placeholder="Ex.: 60">
+          <p>O valor indicado pela balança muda com a gravidade. Sua massa permanece igual.</p>
+        </div>
+        <div>
+          <label for="anos">Quantos anos nesse planeta?</label>
+          <input id="anos" type="number" inputmode="decimal" min="0" step="any" placeholder="Ex.: 3">
+          <p>Um ano do planeta corresponde a uma volta completa dele ao redor do Sol.</p>
+        </div>
+      </div>
+
+      <button class="botao" type="submit">Calcular</button>
+      <div role="status">
+        <p id="aviso-simulador" hidden>Preencha pelo menos um dos valores.</p>
+        <div class="resultados" id="resultados" hidden>
+          <h2 id="titulo-resultado"></h2>
+          <div class="grade">
+            <article id="cartao-balanca" hidden>
+              <h3>Leitura da balança</h3>
+              <strong class="valor-resultado" id="resultado-balanca"></strong>
+              <p id="referencia-balanca"></p>
+            </article>
+            <article id="cartao-tempo" hidden>
+              <h3>Tempo equivalente na Terra</h3>
+              <strong class="valor-resultado" id="resultado-tempo"></strong>
+              <p id="referencia-tempo"></p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="creditos">Resultados aproximados. Nos planetas gigantes, a balança é apenas uma comparação teórica, pois eles não têm uma superfície sólida para pousar.</p>
+    </form>
+  </main>
+
+  <footer>Sistema Solar · Explorando os planetas</footer>
+</body>
+</html>
